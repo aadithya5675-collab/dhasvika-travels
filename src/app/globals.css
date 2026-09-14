@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dt-navy: #063F6B;
+  --dt-blue: #075B8F;
+  --dt-deep-blue: #0B4F7D;
+  --dt-teal: #0B9E9A;
+  --dt-green: #2AAA45;
+  --dt-lime: #66C83D;
+  --dt-mint: #DFF7EF;
+  --dt-ice: #EEF8FB;
+  --dt-white: #FFFFFF;
+  --dt-text: #083A67;
+  --dt-muted: #5E7690;
+
+  --radius-button: 9999px;
+  --radius-card: 22px;
+  --radius-panel: 28px;
+}
+
+@layer base {
+  * {
+    border-color: rgba(6, 63, 107, 0.1);
+  }
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  body {
+    background-color: #f4fafe;
+    color: var(--dt-text);
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans), sans-serif;
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(7, 91, 143, 0.88) 0%, rgba(11, 158, 154, 0.84) 52%, rgba(6, 63, 107, 0.92) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 50px rgba(3, 66, 108, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glass-card-subtle {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(238, 248, 251, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(6, 63, 107, 0.07);
+}
+
+/* Button Gradients */
+.btn-gradient-green {
+  background: linear-gradient(135deg, #2aaa45 0%, #0b9e9a 65%, #075b8f 100%);
+  box-shadow: 0 8px 22px rgba(42, 170, 69, 0.35);
+}
+.btn-gradient-green:hover {
+  background: linear-gradient(135deg, #2eb74b 0%, #0caea9 65%, #0866a1 100%);
+  box-shadow: 0 10px 28px rgba(42, 170, 69, 0.45);
+}
+
+.btn-gradient-blue {
+  background: linear-gradient(135deg, #075b8f 0%, #063f6b 100%);
+  box-shadow: 0 8px 22px rgba(6, 63, 107, 0.3);
+}
+
+/* Typography Gradient */
+.text-gradient-lime {
+  background: linear-gradient(135deg, #66c83d 0%, #2aaa45 70%, #0b9e9a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom transitions and scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
