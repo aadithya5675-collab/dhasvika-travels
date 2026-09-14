@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
+import { Call, ArrowRight } from "iconsax-react";
 
 export const Footer: React.FC = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -127,9 +128,54 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Agency Branding Credit: SaNeura Technologies */}
+        <div className="mt-6 mb-5 p-4 sm:p-5 rounded-[20px] bg-gradient-to-r from-[#063F6B]/6 via-[#0B9E9A]/10 to-[#2AAA45]/8 border border-dt-blue/15 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left shadow-sm">
+          <div className="flex flex-col sm:flex-row items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#063F6B] via-[#0B9E9A] to-[#2AAA45] p-[2px] shadow-sm flex-shrink-0">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-black text-dt-navy text-xs">
+                ST
+              </div>
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-dt-blue">
+                  Brand Strategy &amp; Website By
+                </span>
+                <span className="text-[14px] font-black text-dt-navy tracking-tight">
+                  {siteConfig.agency.name}
+                </span>
+              </div>
+              <p className="text-[12px] text-dt-muted font-medium mt-0.5">
+                {siteConfig.agency.role} • Transforming businesses through high-impact digital experiences
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-2.5 flex-shrink-0">
+            <a
+              href={siteConfig.agency.phoneHref}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-dt-ice text-dt-navy font-bold text-[12px] border border-dt-blue/20 shadow-xs transition-all hover:scale-105"
+              aria-label={`Call SaNeura Technologies at ${siteConfig.agency.phoneDisplay}`}
+            >
+              <Call size={14} variant="Bold" className="text-dt-green" />
+              <span>Contact: {siteConfig.agency.phoneDisplay}</span>
+            </a>
+
+            <a
+              href={siteConfig.agency.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gradient-green text-white font-black text-[12px] px-4 py-2 rounded-full inline-flex items-center gap-1.5 shadow-sm transition-all hover:scale-105"
+            >
+              <span>Connect with Agency</span>
+              <ArrowRight size={13} />
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Strip: Copyright & Tagline */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-5 text-[12px] text-dt-muted font-medium">
-          <p>© 2025 {siteConfig.businessName}. All rights reserved.</p>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-slate-100 text-[12px] text-dt-muted font-medium">
+          <p>© 2025 {siteConfig.businessName}. All rights reserved. • Powered by <span className="font-bold text-dt-navy">{siteConfig.agency.name}</span></p>
           <p className="font-extrabold text-dt-navy">{siteConfig.tagline}.</p>
         </div>
       </div>

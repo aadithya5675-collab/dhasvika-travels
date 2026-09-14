@@ -45,6 +45,14 @@ export const siteConfig = {
     email: "contact@dhasvikatravels.com",
     address: "Coimbatore, Tamil Nadu, India",
   },
+  agency: {
+    name: "SaNeura Technologies",
+    role: "Website Development, Digital Branding & Business Promotion",
+    phone: "+91 93444 47693",
+    phoneDisplay: "93444 47693",
+    phoneHref: "tel:+919344447693",
+    whatsappHref: "https://wa.me/919344447693?text=Hello%20SaNeura%20Technologies%2C%20I%20am%20interested%20in%20website%20and%20branding%20services.",
+  },
   navLinks: [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
